@@ -1,31 +1,267 @@
-.students{
+@import "../../../Assets/Fonts/IRANSans/Font.css";
+
+:root {
+    /* color */
+    --c-button-blue: #224fa8;
+    --c-button-hover-blue: rgb(90, 117, 196);
+    --c-button-red: #d63b42;
+    --c-button-hover-red: #da5d63;
+    --c-background-boxs: white;
+    --c-background-basic: #f1f1f4;
+
+    /* border */
+    --b-button-basic-blue: 1px solid #0c0cdfab;
+    --b-button-basic-red: 1px solid #fa0e0ec5;
+    --b-basic: 1px solid hsla(0, 0%, 0%, 0.2);
+
+    /* sectoin-box */
+    --sb-border: 1px solid hsla(0, 0%, 0%, 0.15);
+    --sb-box-shadow: 0 0 10px 1px hsla(0, 0%, 0%, 0.05);
+
+    /*---- sizeing ----*/
+    /* pading */
+    --p-inputs-basis: .3rem;
+    /* border-radius */
+    --br-basis: 8px;
+}
+
+
+body {
+    background-color: var(--c-background-basic);
+    padding: 1rem 1.5rem;
+    font-family: IRANSansX;
+}
+
+.body-section {
+    background-color: var(--c-background-boxs);
+    border-radius: var(--br-basis);
+    border: var(--sb-border);
+    box-shadow: var(--sb-box-shadow);
+}
+
+.header {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 1rem;
+    padding: .6rem 1rem;
+    gap: 1rem;
+}
+
+
+.header__sort--label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.header__sort-select {
+    width: 15rem;
+    margin-left: 1rem;
+    text-align: center;
+    padding: var(--p-inputs-basis);
+    border-radius: var(--br-basis);
+}
+
+.header__botton {
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     gap: 2rem;
 }
 
-.students__items{
-    flex: 1 1 calc(50% - 2rem);
+.header__radio-group {
+    display: flex;
 }
 
-.students__table{
-    text-align: center;
-    margin-inline: auto;
-    min-width: 20rem;
-}
-
-.students__table td , .students__table th{
-    border: 2px solid black;
-    padding: 1rem;
-}
-
-.students__table th{
+.header__filter--submit {
+    background-color: var(--c-button-blue);
+    color: white;
+    padding: .5rem 3rem;
+    border-radius: 10px;
+    border: var(--b-button-basic-blue);
     font-weight: bold;
+    transition-property: background-color;
+    transition-duration: .4s;
+    transition-timing-function: ease;
+}
+
+.header__filter--submit:hover {
+    background-color: var(--c-button-hover-blue);
+}
+
+.header__search {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    align-items: center;
+    gap: .5rem;
+}
+
+.header__search--filter-box {
+    grid-column: 5 / -1;
+    grid-row: 1 / 2;
+
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.header__search-label {
+    flex: 0 0 auto;
+}
+
+.header__search-select {
+    flex: 1;
+    padding: var(--p-inputs-basis);
+    border-radius: var(--br-basis);
+    text-align: center;
+}
+
+.header__search-input {
+    grid-column: 4 / -1;
+    grid-row: 2 / 3;
+    border: 1px solid black;
+    padding: var(--p-inputs-basis);
+    font-size: .95rem;
+    border-radius: var(--br-basis);
+    text-align: center;
+}
+
+
+
+.main {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1rem;
 }
 
 .hidden {
     display: none;
+}
+
+.students {
+    grid-column: 1 / 5;
+}
+
+.students-body {
+    grid-column: 5 / 13;
+}
+
+.students__table {
+    table-layout: fixed;
+    user-select: none;
+    width: 100%;
+}
+
+.students__table thead tr {
+    border-bottom: var(--b-basic);
+}
+
+.students__table tbody tr:not(:last-child) {
+    border-bottom: var(--b-basic);
+}
+
+.students__table tbody tr:hover {
+    background-color: #eaeaea;
+}
+
+.students__table td,
+.students__table th {
+    padding: 1rem;
+}
+
+.students__table td:first-child,
+.students__table th:first-child {
+    text-align: start;
+    padding-left: 3.5rem;
+}
+
+.students__table td:nth-child(2n),
+.students__table th:nth-child(2n) {
+    text-align: end;
+    padding-right: 3.5rem;
+}
+
+.students__table th {
+    font-weight: bold;
+}
+
+.students-body__box {
+    padding: .8rem;
+}
+
+.students-body__intro-item {
+    margin-bottom: 1rem;
+}
+
+
+.students-body__intro>div span:first-child {
+    font-weight: bold;
+}
+
+.students-body__score-table {
+    width: 100%;
+    text-align: center;
+}
+
+.students-body__score-table thead tr {
+    border-bottom: var(--b-basic);
+}
+
+.students-body__score-table th,
+.students-body__score-table td {
+    padding: .5rem;
+}
+
+.students-body__score-table th:not(:last-child),
+.students-body__score-table td:not(:last-child) {
+    border-right: var(--b-basic);
+}
+
+.students-body__gpa {
+    margin-block: 1rem;
+    padding: .8rem;
+    border: var(--b-basic);
+}
+
+.students-body__gpa>span {
+    padding-top: .3rem;
+    display: inline-block;
+}
+
+.students-action {
+    display: flex;
+    justify-content: space-around;
+}
+
+.studetns-action__update {
+    background-color: var(--c-button-blue);
+    color: white;
+    padding: .6rem 5rem;
+    border-radius: 10px;
+    border: var(--b-button-basic-blue);
+    font-weight: bold;
+    transition-property: background-color;
+    transition-duration: .4s;
+    transition-timing-function: ease;
+}
+
+.studetns-action__update:hover {
+    background-color: var(--c-button-hover-blue);
+}
+
+.studetns-action__delete {
+    background-color: var(--c-button-red);
+    color: white;
+    padding: .6rem 5rem;
+    border-radius: 10px;
+    border: var(--b-button-basic-red);
+    font-weight: bold;
+    transition-property: background-color;
+    transition-duration: .4s;
+    transition-timing-function: ease;
+}
+
+.studetns-action__delete:hover {
+    background-color: var(--c-button-hover-red);
 }

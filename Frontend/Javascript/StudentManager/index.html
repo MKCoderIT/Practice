@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -12,85 +12,111 @@
 </head>
 
 <body>
-    <header class="header">
+    <header class="header body-section">
         <div class="header__filter">
 
-            <label for="selector-header-sort" class="header__label">
+            <label for="selector-header-sort" class="header__sort--label">
                 Sort by
                 <select class="header__sort-select" name="header-sort" id="selector-header-sort">
                     <option value="name">Name</option>
                     <option value="age">Age</option>
+                    <option value="gpa">GPA</option>
                 </select>
             </label>
 
-            <fieldset class="header__radio-group">
-                <legend class="header__radio-title">Filter</legend>
 
-                <div class="header__radio-item">
-                    <input class="header__radio-input" type="radio" name="header-filter" id="header-filter-all"
-                        value="all" checked>
-                    <label class="header__radio-label" for="header-filter-all">All</label>
+            <div class="header__botton">
+                <div class="header__radio--section">
+                    <span class="header__radio--section">Filter :</span>
+                    <div class="header__radio-group">
+                        <div class="header__radio-item">
+                            <input class="header__radio-input" type="radio" name="header-filter" id="header-filter-all"
+                                value="all" checked>
+                            <label class="header__radio-label" for="header-filter-all">All</label>
+                        </div>
+
+                        <div class="header__radio-item">
+                            <input class="header__radio-input" type="radio" name="header-filter"
+                                id="header-filter-passing" value="passing">
+                            <label class="header__radio-label" for="header-filter-passing">Passing</label>
+                        </div>
+
+                        <div class="header__radio-item">
+                            <input class="header__radio-input" type="radio" name="header-filter"
+                                id="header-filter-failed" value="failed">
+                            <label class="header__radio-label" for="header-filter-failed">Failed</label>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="header__radio-item">
-                    <input class="header__radio-input" type="radio" name="header-filter" id="header-filter-passing"
-                        value="passing">
-                    <label class="header__radio-label" for="header-filter-passing">Passing</label>
-                </div>
-
-                <div class="header__radio-item">
-                    <input class="header__radio-input" type="radio" name="header-filter" id="header-filter-failed"
-                        value="failed">
-                    <label class="header__radio-label" for="header-filter-failed">Failed</label>
-                </div>
-
-            </fieldset>
-
-            <button class="header__submit">Update</button>
+                <button class="header__filter--submit">Apply filters</button>
+            </div>
+        </div>
+        <div class="header__search">
+            <div class="header__search--filter-box">
+                <label class="header__search-label" for="header__search-select">Search by</label>
+                <select class="header__search-select" id="header__search-select" name="header-search-select">
+                    <option value="name">Name</option>
+                    <option value="age">Age</option>
+                </select>
+            </div>
+            <input class="header__search-input" placeholder="Search" type="search" name="header-search">
         </div>
     </header>
 
 
     <main class="main">
         <div class="students">
-            <div class="students__list students__items">
+            <div class="students__table--box body-section">
                 <table class="students__table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Name</th>
-                            <th scope="col">Age</th>
+                    <thead class="students__table-head">
+                        <tr class="students__table-row">
+                            <th class="students__table-header" scope="col">Name</th>
+                            <th class="students__table-header" scope="col">Age</th>
                         </tr>
                     </thead>
-                    <tbody></tbody>
+                    <tbody class="students__table-body"></tbody>
                 </table>
             </div>
-            <div class="students__form students__items" style="background-color: blue; height: 2rem;">
-                <div class="students__form--box">
-                    <div class="students__form--Introduction">
-                        <div class="students__form--name">
-                            <p>student name :</p>
-                        </div>
-                        <div class="students__form--age">
-                            <p>student age :</p>
-                        </div>
-                    </div>
-                    <div class="students__form--GPA">
-                        <p>student GPA :</p>
-                    </div>
-                    <table class="students__form--table">
-                        <thead>
-                            <tr>
-                                <th>Physics</th>
-                                <th>Mathematics</th>
-                                <th>Chemistry</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+        </div>
 
-                        </tbody>
-                    </table>
+        <div class="students-body">
+            <div class="students-body__box body-section">
+
+                <div class="students-body__intro">
+                    <div class="students-body__name students-body__intro-item">
+                        <span>Student name : </span>
+                        <span class="students-body__label"></span>
+                    </div>
+
+                    <div class="students-body__age students-body__intro-item">
+                        <span>Student age : </span>
+                        <span class="students-body__label"></span>
+                    </div>
+                </div>
+
+                <table class="students-body__score-table">
+                    <thead class="students-body__score-head">
+                        <tr class="students-body__score-row">
+                            <th class="students-body__score-header">Physics</th>
+                            <th class="students-body__score-header">Mathematics</th>
+                            <th class="students-body__score-header">Chemistry</th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="students-body__score-body"></tbody>
+                </table>
+                <div class="students-body__gpa">
+                    <span>Student GPA : </span>
+                    <span class="students-body__label"></span>
+                </div>
+
+
+                <div class="students-action">
+                    <button class="studetns-action__update">Update</button>
+                    <button class="studetns-action__delete">Delete</button>
                 </div>
             </div>
+
         </div>
     </main>
 </body>
